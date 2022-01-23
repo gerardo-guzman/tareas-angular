@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content class="w-100 mx-0 px-2">
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Título de la tarea</mat-label>
+    <input matInput [formControl]="tareaForm">
+    <mat-error>
+        Escribe la tarea para guardar
+    </mat-error>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions align="center">
+  <button mat-flat-button [mat-dialog-close]="false" color="warn">Cancelar</button>
+  <button mat-flat-button (click)="confirmar()" color="primary">Agregar</button>
+</div>

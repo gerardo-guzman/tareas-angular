@@ -1,0 +1,41 @@
+<div class="main-container">
+    <mat-card class="card-login">
+        <div class="w-100 text-center">
+            <span class="span-title">Inicio de sesión</span>
+        </div>
+        <div class="w-100 row mx-0 mt-2" [formGroup]="loginForm">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>Usuario</mat-label>
+                <input matInput
+                    autocomplete="off"
+                    placeholder=""
+                    type="text"
+                    required
+                    formControlName="user"
+                >
+                <mat-error>
+                    El usuario es <strong>obligatorio</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>Password</mat-label>
+                <input matInput 
+                    nonecomplete="off"
+                    name="password" 
+                    type="password"
+                    required
+                    formControlName="password"
+                >
+                <mat-error>
+                    La contraseña es <strong>obligatoria</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <mat-card-actions align="center">
+            <button mat-flat-button color="primary" (click)="login()" *ngIf="!isLoading">Ingresar</button>
+            <div class="row w-100 mx-0 align-items-center justify-content-center py-2" *ngIf="isLoading">
+                <mat-spinner></mat-spinner>
+            </div>
+          </mat-card-actions>
+    </mat-card>
+</div>

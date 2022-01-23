@@ -1,0 +1,27 @@
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #212121;
+    display: block;
+    padding: 15px;
+}
+
+.span-title {
+    font-size: 1.4rem;
+}
+
+.card-login {
+    position: absolute;
+    width: 90%;
+    top: 20%;
+}
+
+@media (min-width: 992px) {//grande
+    .card-login {
+        position: absolute;
+        width: 450px;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);      
+    }
+}
