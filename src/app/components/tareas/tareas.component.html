@@ -4,9 +4,11 @@
     </mat-card-header>
     <mat-card-content class="w-100 mx-0">
         <div class="w-100 row mx-0 px-2 py-2 align-items-center">
-            <ng-template *ngFor="let tarea of tareas; let ind = index;">
+            <ng-container *ngFor="let tarea of tareas; let ind = index;">
                 <div class="col-1 custom-border">
-                    <mat-checkbox (change)="toggleChange($event, ind)"></mat-checkbox>
+                    <mat-checkbox (change)="toggleChange($event, ind)"
+                        [checked]="tarea.done"
+                    ></mat-checkbox>
                 </div>
                 <div class="col-7 custom-border text-center">
                     {{tarea.titulo}}
@@ -23,13 +25,18 @@
                           <mat-icon>edit</mat-icon>
                           <span>Editar</span>
                         </button>
-                        <button mat-menu-item (click)="eliminarTarea(ind)">
+                        <button mat-menu-item (click)="eliminarTarea(ind)"
+                            [disabled]="rol!=='admin'"
+                        >
                           <mat-icon>clear</mat-icon>
                           <span>Eliminar</span>
                         </button>
                       </mat-menu>
                 </div>
-            </ng-template>
+            </ng-container>
+        </div>
+        <div class="w-100 py-4 text-center" *ngIf="tareas.length < 1">
+            <span>Aún no hay tareas por hacer</span>
         </div>
     </mat-card-content>
     <mat-card-actions align="end">

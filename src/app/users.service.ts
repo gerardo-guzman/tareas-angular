@@ -24,7 +24,7 @@ export class UsersService {
   }
 
   login(user: string, password: string): Observable<any> {
-    if (user === 'jerry' && password === 'crazyPWD') {
+    if (user === 'jerry' && password === 'jerry') {
       return of({
         token: "QpwL5tke4Pnpja7X4",
         rol: 'user'

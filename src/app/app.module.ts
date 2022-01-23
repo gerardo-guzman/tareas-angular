@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -7,7 +7,7 @@ import { LoginComponent } from './views/login/login.component';
 import { HomeComponent } from './views/home/home.component';
 import { AppRoutingModule } from './app.routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { registerLocaleData } from '@angular/common';
 // Material
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -24,6 +24,10 @@ import { AgregarTareaComponent } from './components/agregar-tarea/agregar-tarea.
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
+
+import localMx from '@angular/common/locales/es-MX';
+
+registerLocaleData(localMx, 'es-MX');
 
 const MY_MAT_MODULES = [
   MatCardModule,
@@ -57,7 +61,9 @@ const MY_MAT_MODULES = [
     ReactiveFormsModule,
     ...MY_MAT_MODULES
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'es-MX'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
