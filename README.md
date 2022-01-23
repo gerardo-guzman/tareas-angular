@@ -1,27 +1,21 @@
-# TestAngular
+# Aplicación de Tareas 📋
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
+Esta aplicación es un ejemplo de una tarjeta de tareas por hacer
+tiene las acciones de:
+* crear una nueva tarea
+* editar una tarea existente
+* eliminar tareas
 
-## Development server
+Hay dos tipos de usuario:
+* Administrador (user: admin, password: admin).
+* Usuario (user: jerry, password: jerry).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Esta aplicación es solo de FrontEnd, no esta coenctada a ningún backend
+Los datos persisten usando el localstorage del navegador.
+Se considero usar Redux (ngRx), pero se descartó por el tamaño pequeño.
 
-## Code scaffolding
+## Probar la aplicación 🚀
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Recuerda situarte en la raíz de la aplicación y ejecutar `npm i`, para descargar
+las dependencias de la app. Una vez que aparezcan los `node_modules` podrás ejecutar `ng serve` para levantar el servidor de desarrollo en `http://localhost:4200/`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
