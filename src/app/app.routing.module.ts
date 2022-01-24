@@ -7,8 +7,8 @@ import { LoginComponent } from "./views/login/login.component";
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent, canActivate: [AnonimousGuard] },
-    { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-    { path: '**', redirectTo: 'home',  }
+    { path: '', loadChildren: () => import('../app/views/views.module').then(m => m.ViewsModule), canActivate: [AuthGuard] },
+    { path: '**', redirectTo: '',  }
 ];
 
 @NgModule({

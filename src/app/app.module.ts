@@ -4,7 +4,6 @@ import { LOCALE_ID, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './views/login/login.component';
-import { HomeComponent } from './views/home/home.component';
 import { AppRoutingModule } from './app.routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
@@ -19,13 +18,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { TareasComponent } from './components/tareas/tareas.component';
-import { AgregarTareaComponent } from './components/agregar-tarea/agregar-tarea.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
 
 import localMx from '@angular/common/locales/es-MX';
+import { MatNativeDateModule } from '@angular/material/core';
 
 registerLocaleData(localMx, 'es-MX');
 
@@ -49,9 +47,6 @@ const MY_MAT_MODULES = [
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
-    TareasComponent,
-    AgregarTareaComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +54,7 @@ const MY_MAT_MODULES = [
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    MatNativeDateModule,
     ...MY_MAT_MODULES
   ],
   providers: [

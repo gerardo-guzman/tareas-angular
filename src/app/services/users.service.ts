@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, dematerialize, materialize } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { Tarea } from './models/tarea.model';
+import { Tarea } from '../models/tarea.model';
 @Injectable({
   providedIn: 'root'
 })

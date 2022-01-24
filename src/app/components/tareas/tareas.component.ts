@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { MatDialog } from '@angular/material/dialog';
 import { Tarea } from 'src/app/models/tarea.model';
-import { UsersService } from 'src/app/users.service';
+import { UsersService } from 'src/app/services/users.service';
 import { AgregarTareaComponent } from '../agregar-tarea/agregar-tarea.component';
 
 @Component({

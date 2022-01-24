@@ -1,0 +1,36 @@
+
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="menu" (click)="menuLatIzq.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>By Gerardo Guzmán 🐒</span>
+</mat-toolbar>
+
+
+<mat-sidenav-container class="layout-contenedor" [hasBackdrop]="(isHandset$ | async) ? true : false">
+    <mat-sidenav #menuLatIzq class="menu-lat-izq" [fixedInViewport]="false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="'push'"
+    [opened]="(isHandset$ | async)">
+    <mat-list class="seccion-superior w-100">
+        <mat-list-item class="nav-item" *ngFor="let route of routes"
+            routerLink="{{route.path}}"
+        >
+            <mat-icon mat-list-icon>{{route.icon}}</mat-icon>
+            <div mat-line>{{route.title}}</div>
+        </mat-list-item>
+        <mat-list-item  class="nav-item"
+            (click)="logout()"
+        >
+            <mat-icon mat-list-icon>logout</mat-icon>
+            <div mat-line>Salir</div>
+        </mat-list-item>
+
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <div class="contenedor-layout">
+          <router-outlet></router-outlet>
+      </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
