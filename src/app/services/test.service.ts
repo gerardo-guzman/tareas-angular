@@ -27,7 +27,7 @@ export class TestService {
     return this.http.get(`${URL_BASE}api/v1.0/dates/bisiestos`, { params });
   }
 
-  getMatrixCoord(params: {n: string, rotate: string, coord: string}): Observable<any> {
+  getMatrixCoord(params: {n: string, rotate: string, coords: string}): Observable<any> {
     return this.http.get(`${URL_BASE}api/v1.0/math/matrix`, { params });
   }
 

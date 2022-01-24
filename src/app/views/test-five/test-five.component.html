@@ -1,1 +1,34 @@
-<p>test-five works!</p>
+<div class="container">
+    <h1>Contador de letras</h1>
+    <mat-divider></mat-divider>
+    <p class="mt-3">
+        Este endpoin obtiene el número de letras que se repiten en un texto dado.
+    </p>
+    <mat-card>
+        <mat-card-content class="w-100 mx-0 px-2 row">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>Texto</mat-label>
+                <textarea matInput autocomplete="off" placeholder=""
+                    required [formControl]="texto" rows="3"
+                ></textarea>
+                <mat-error>
+                    Campo obligatorio
+                </mat-error>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions align="center">
+            <button mat-flat-button color="primary" (click)="getLetras()" *ngIf="!isLoading">Enviar</button>
+            <div class="row w-100 mx-0 align-items-center justify-content-center py-2" *ngIf="isLoading">
+                <mat-spinner></mat-spinner>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+    <mat-card class="mt-4 w-100" *ngIf="letters">
+        <mat-card-content class="w-100 mx-0 px-2 row">
+            <mat-form-field appearance="outline" class="col-auto" *ngFor="let letter of letters">
+                <mat-label>{{letter.letter}}</mat-label>
+                <input matInput autocomplete="off" [value]="letter.count" readonly>
+            </mat-form-field>
+        </mat-card-content>
+    </mat-card>
+</div>
